@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        li{
+            background-color: rgb(94, 252, 115);
+            height: 40px;
+            width:200px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            position: relative;
+        }
+        .del{
+            background-color: blue;
+            color: white;
+            position: absolute;
+            right: 5%;
+        }
+        .up{
+            background-color: red;
+            color:white;
+            margin-left:x0px;
+            margin-top:0px;
+        }
+        .edt{
+            background-color: blue;
+            color: white;
+            position: absolute;
+            right: 35%;
+        }
+    </style>
+</head>
+<body>
+    <h1>to do list</h1>
+    <form action="">
+        <input type="text" name="" id="" placeholder="new...">
+        <button type="button" onclick="updatevalue(event)" class="up">update</button>
+    </form>
+    <h2>new items</h2>
+    <ul>
+
+    </ul>
+    <button onclick="c()">clear-values</button>
+</body>
+<!-- /////////////////////////////////////////// -->
+<script>
+    let ul=document.querySelector("ul")
+    let input=document.querySelector("input")
+    let form=document.querySelector("form")
+
+    let itemarray=localStorage.getItem("i") ? JSON.parse(localStorage.getItem("i")) : []//make array to store values
+                               //if array has item it convert into prase and show else it store empty array
+    //console.log(itemarray);
+
+    form.addEventListener("submit",function(e){     //store when enter
+        e.preventDefault()                          //it focus on input after pressing enter
+        itemarray.push(input.value)                 //push value of user into array
+        localStorage.setItem("i",JSON.stringify(itemarray)) //set item after making string
+        limaker(input.value)
+        input.value="  "          
+    })
+
+    let data=JSON.parse(localStorage.getItem("i"))
+     data.forEach((data,index)=>
+     limaker(data,index))
+
+    function limaker(text,index)/////////////////////////////////////////
+    {   
+        let li=document.createElement("li")
+        li.innerHTML=text
+        ul.appendChild(li)
+
+        let b=document.createElement("button")//add delete
+        b.innerHTML="delete"
+        b.classList.add("del")
+        li.appendChild(b)
+        b.onclick=function(){
+            deletework(index)
+        }   
+
+        let e=document.createElement("button")  //add edit
+        e.innerHTML="edit"
+        e.classList.add("edt")
+        li.appendChild(e)
+        e.onclick=function(){
+            edit(text,index)
+        }   
+    }
+    function deletework(i)////////////////////////////////////
+    {
+        itemarray.splice(i,1)//delete from array
+        localStorage.setItem("i",JSON.stringify(itemarray))//add delteted array in local storage
+        location.reload()// reload page
+    }
+    let handler=-1
+
+    function edit(value,i)//////////////////////////////////////
+    { 
+      input.value=value
+      handler=i
+    }
+
+    function updatevalue(e)/////////////////////////////////
+    {
+        let newvalue=input.value
+        if(handler===-1){
+            alert("pres enter key for new data")
+        }
+        else{
+        itemarray[handler]=newvalue
+        localStorage.setItem("i",JSON.stringify(itemarray))
+        ul.innerHTML=" "
+
+        itemarray.forEach((data,index)=>
+        limaker(data,index))
+        }
+        input.value=""
+        handler=-1
+    }
+    function c()    ////////////////////////////////////////////
+    {
+        ul.innerHTML=" "
+        localStorage.clear();
+        console.log("cleared")
+    }
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock digital</title>
+</head>
+<style>
+    .main{
+        background-color: pink;
+        margin: auto;
+        margin-top: 50px;
+        height:160px;
+        width:500px;
+        border: 2px double red;
+        /* border-radius: 50%; */
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: blue;
+        line-height: 47px;
+    }    
+   
+</style>
+</head>
+ <body>
+      <div class="main">time and<br> date here   </div>
+</body>
+<script> 
+
+    function clock()
+    { 
+        var date=new Date();
+        
+        var h=date.getHours();
+        if(h<10)
+        {
+            h='0'+h;
+        }
+        if(h>12)
+        {
+            h=h-12
+        }
+        var m=date.getMinutes();
+        if(m<10)
+        {
+            m='0'+m;
+        }
+        var da=['Sunday','mon','tues','wed','thurs','fri','sat']
+        var day=date.getDay();
+        day=da[day]
+
+        var s=date.getSeconds(); 
+         if(h>12)
+        {
+            s=s+'pm'
+        }
+        else if(h<12)
+        {
+            s=s+'  am'
+        }
+        var da=date.getDate();
+        if(da<10)
+        {
+            da='0'+da;
+        }
+        var ma=['jan','feb','mar','april','may','june','july','aug','sep','oct','nov','dec']
+        var d=date.getMonth();
+        d=ma[d]
+        if(d<10)
+        {
+            d='0'+d;
+        }
+        var y=date.getFullYear();
+        
+        document.getElementsByClassName('main')[0].innerHTML=`${da}   -   ${d}  -   ${y}<br>  ${day}<br>${h}  :  ${m}  :  ${s}`
+    }
+    setInterval(clock,1000)
+
+</script>
+</html>

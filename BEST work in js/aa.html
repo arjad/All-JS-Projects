@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="aa.css">
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>hey</p>
+            <p>lets</p>
+            <p>dance</p>
+        </div>
+        <div class="panel panel2">
+            <p>give</p>
+            <p>take</p>
+            <p>recieve</p>
+        </div>
+        <div class="panel panel3">
+            <p>experience</p>
+            <p>it</p>
+            <p>today</p>
+        </div>
+        <div class="panel panel4">
+            <p>give</p>
+            <p>all</p>
+            <p>you can</p>
+        </div>
+        <div class="panel panel5">
+            <p>life</p>
+            <p>in</p>
+            <p>motion</p>
+        </div>
+    </div>
+
+
+<script>
+ const panels=document.querySelectorAll('.panel');
+ panels.forEach(panel1=> panel1.addEventListener('click',toggleOpen));
+ panels.forEach(panel=>panel.addEventListener('transitionend',toggleActive))
+ 
+ function toggleOpen()
+ {
+     console.log('hello')
+    this.classList.toggle('open');
+     
+ }
+
+ function toggleActive(e)
+ {
+    console.log(e.propertyName);
+    if(e.propertyName.includes('flex'))
+    {
+        this.classList.toggle('open-active');
+    }
+     
+ }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

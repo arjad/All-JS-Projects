@@ -1,0 +1,231 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.msg{
+    height:50px;
+    width:50px;
+    position: fixed;
+    margin-top: 530px;
+    margin-left: 1270px;
+    z-index: 3;
+    color:white;
+    padding: 20%;
+    box-sizing: border-box;
+    font-size: 23px;
+    background-color: #443178;
+}
+.msg:hover{
+    background-color: #7befb1;
+    cursor: pointer;
+
+}
+nav{
+    height:100px;
+    width:100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: ;
+}
+nav ul{
+    font-size: 22px;
+    list-style: none;
+    margin-top: 36px;
+    color: #443178;
+}
+nav li{
+    display: inline;
+    margin-left: 37px;
+    border: 1px solid red;
+    position: relative;
+}
+.g1:nth-child(1){
+    height:7px;
+    width:100%;
+    background-color: #7befb1;
+    position: absolute;
+    left:0%;
+    top:-143%;
+}
+.g{
+    height:7px;
+    width:100%;
+    background-color: #7befb1;
+    position: absolute;
+    left:-100%;
+    top:-143%;
+    opacity: 0;
+    transition-duration: 1s;
+}
+nav li:hover .g{
+    opacity: 1;
+    left:0%;
+    cursor: pointer;
+
+}
+.s{
+    display: flex;
+    align-items: center;
+    background-color: #7befb1;
+    margin-left: 5%;
+    padding-right: 3%;
+    color:#443178;
+}
+/* ///////////////////////////////////////// */
+.d1{
+    height:570px;
+    width:100%;
+    position: relative;
+}
+.left{
+    padding-top: 1%;
+    box-sizing: border-box;
+    position: absolute;
+    left:5%;
+    top:45%;
+    z-index: 6;
+    background-color: #7befb1;
+    height:50px;
+    width:50px;
+    color:#443178;
+    text-align: center;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+.left:hover{
+    background-color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.right{
+    padding-top: 1%;
+    box-sizing: border-box;
+    position: absolute;
+    right:5%;
+    top:45%;
+    z-index: 6;
+    background-color: #7befb1;
+    height:50px;
+    width:50px;
+    color:#443178;
+    text-align: center;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+.right:hover{
+    background-color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.i1{
+    height:100%;
+    width:100%;
+    border:1px solid black;
+    background-image: url("slide1.jpg");
+    background-size: 100% 100%;
+    position: absolute;
+    transition-duration: 1s;
+}
+.i1 h3{
+    position: absolute;
+    left:10%;
+    top:20%;
+    color:white;
+    font-size: 25px;
+    animation-name: ok;
+    animation:ok 1s  0.5 1 forward;
+    animation-iteration-count: ;
+}
+@keyframes ok{
+    from{
+        
+    }
+}
+.i1 h1{
+    position: absolute;
+    left:10%;
+    top:30%;
+    color:white;
+    font-size: 55px;
+}
+.i1 .b1{
+    height:10%;
+    width: 11%;
+    background: transparent;
+    border: 2px solid white;
+    color:white;
+    font-weight: bold;
+    position: absolute;
+    left:10%;
+    top:58%;
+}
+.i1 .b2{
+    position: absolute;
+    left:23%;
+    top:58%;
+    font-weight: bold;
+    height:10%;
+    width: 11%;
+    border: none;
+    background: #7befb1;
+    color:#443178;
+}
+.i2{
+    height:100%;
+    width:100%;
+    border:1px solid black;
+    background-image: url("slide2.jpg");
+    background-size: 100% 100%;
+    position: absolute;
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+.i2{
+    height:100%;
+    width:100%;
+    border:1px solid black;
+    background-image: url("slide2.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: centers;
+
+}
+.i2 h3{
+    color:white;
+    font-size: 25px;
+
+}
+.i2 h1{
+    color:white;
+    font-size: 55px;
+    text-align: center;
+}
+.b{
+    height:60px;
+    width:350px;
+    /* border:1px solid red */
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+.i2 .b1{
+    height:100%;
+    width: 45%;
+    background: transparent;
+    border: 2px solid white;
+    color:white;
+    font-weight: bold;
+}
+.i2 .b2{
+
+    font-weight: bold;
+    height:100%;
+    width: 45%;
+    border: none;
+    background: #7befb1;
+    color:#443178;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+    <style>
+        .div{
+            border:1px solid black;
+            background-color: light grey;
+            height:300px;
+            width:400px;
+            margin: auto;
+        }
+        .ans{
+            border:1px solid black;
+            background-color: light grey;
+            height:100px;
+            width:400px;
+            margin: auto;
+        }
+        input{
+            height:18%;
+            width:70%;
+            margin-left: 15%;
+            margin-top: 3%;
+            border: 1px solid grey;
+        }
+        button{
+            height:18%;
+            width:70%;
+            margin-left: 15%;
+            margin-top: 3%;
+            background-color: blue;
+            color: white;
+            border: 1px solid rgb(244, 244, 245);
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <input type="text" placeholder="1st value">       
+        <input type="text" placeholder="operator">
+        <input type="text" placeholder="2nd value">
+        <button onclick="cal()">Calulate</button>
+    </div>
+    <div class="ans">
+    </div>
+</body>
+<script>
+    function cal()
+    {
+        var a=document.getElementsByTagName('input')[0].value
+        var b=document.getElementsByTagName('input')[1].value
+        var c=document.getElementsByTagName('input')[2].value
+        if(c=='+')
+        {
+            var d=a+b;
+        }
+        else if(c=='-')
+        {
+            var d=a-b;
+        }
+        else if(c=='*')
+        {
+            var d=a*b;
+        }
+        else if(c=='/')
+        {
+            var d=a/b;
+        }
+
+        document.getElementsByClassName('ans')[0].innerHTML=`${a}  ${c}  ${b}  =  ${d} `        
+
+    }
+</script>
+</html>

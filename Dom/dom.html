@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blue,boder,color</title>
+    <link rel="stylesheet" href="dom.css">
+</head>
+<body>
+    <div class="controls">
+        <label for="spacing"> Spacing: </label>
+        <input id="spacing" type="range" name="spacing" min="10" max="200" value="100" data-sizing="px"></input>
+
+        <lable for="blur">Blur:      </lable>
+        <input id="blur" type="range" name="blur" min="0" max="25"  value="1" data-sizing="px">   
+
+        <lable for="base">Base Color:      </lable>
+        <input id="base" type="color" name="base" min="0" max="25"  value="#ffc600" data-sizing="px">   
+    </div>
+<img id="img" src="sky.jpg" alt="">
+
+<script>
+const inputs =document.querySelectorAll(".controls input");
+inputs.forEach(input =>input.addEventListener("change",handleUpdate));
+inputs.forEach(input =>input.addEventListener("click",handleUpdate));
+
+function handleUpdate() 
+{
+    const suffix = this.dataset.sizing ||"";
+    console.log(`name=`,this.name);
+    console.log(`value = `,this.value);
+    console.log(`unit =`,this.dataset.sizing);
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix); // style.padding=20px
+}
+</script>
+</body>
+</html>

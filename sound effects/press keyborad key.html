@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="keys">
+        <div class="key" data-key="65">
+            <kbd>A</kbd>
+            <span class="sound">Clap</span>
+        </div>
+    <div class="key" data-key="83">
+        <kbd>s</kbd>
+        <span class="sound">hihat</span>
+    </div>
+    <div class="key" data-key="68">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+    </div>
+    <div class="key" data-key="70">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+    </div>
+    <div class="key" data-key="71">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+    </div>
+    <div class="key" data-key="72">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+    </div>
+    <div class="key" data-key="74">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+    </div>
+<div class="key" data-key="75">
+    <kbd>k</kbd>
+    <span class="sound">tom</span>
+</div>
+<div class="key" data-key="76">
+    <kbd>I</kbd>
+    <span class="sound">think</span>
+</div>
+    </div>
+    <audio data-key="65" src="./sounds/crash.mp3"></audio>
+    <audio data-key="83" src="./sounds/kick-bass.mp3"></audio>
+    <audio data-key="68" src="./sounds/snare.mp3"></audio>
+    <audio data-key="70" src="./sounds/tom-1.mp3"></audio>
+    <audio data-key="71" src="./sounds/tom-2.mp3"></audio>
+    <audio data-key="72" src="./sounds/tom-4.mp3"></audio> 
+    <audio data-key="74" src="./sounds/crash.mp3"></audio>
+    <audio data-key="75" src="./sounds/kick1.mp4"></audio>
+    <audio data-key="76" src="./sounds/Suit tera kala kala Dilli Sara- Kamal Khan, Kuwar Virk (Lyrics Video).m4a"></audio>
+</body>
+<script>
+    window.addEventListener("keydown",
+    function(e)
+    {
+        // console.log(`targt= `,e.target)
+        var audio=document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        console.log(e.keyCode);
+        var key=document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+        audio.currentTime=0;
+        audio.play();
+        key.classList.add("playing")
+    });
+    var keys= document.querySelectorAll(".key");
+    console.log(keys);
+    keys.forEach(key=>key.addEventListener("transitionend",removetransition)
+    );
+    function removetransition(e){
+
+        console.log(e.target.classList)
+        // if (e.propertyName !== "trnaform");
+        // return;
+        e.target.classList.remove("playing");
+    }
+    
+</script>
+</html>

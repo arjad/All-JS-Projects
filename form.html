@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+    <style>
+        .div{
+            border:1px solid black;
+            background-color: light grey;
+            height:400px;
+            width:400px;
+        }
+        .ans{
+            border:1px solid black;
+            background-color: light lightcoral;
+            height:200px;
+            width:400px;
+            line-height: 25px;
+            font-size: 25px;
+            padding-left: 4%;
+            box-sizing: border-box;
+        }
+        input{
+            height:12%;
+            width:70%;
+            margin-left: 15%;
+            margin-top: 3%;
+            border: 1px solid grey;
+        }
+        button{
+            height:10%;
+            width:70%;
+            background-color: red;
+            color: white;
+            margin-left: 15%;
+            margin-top: 5%;
+            border: 1px solid rgb(244, 244, 245);
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <input type="text" placeholder="enter name">       
+        <input type="text" placeholder="enter age">
+        <input type="text" placeholder="enter birthdate">
+        <input type="text" placeholder="enter degree">
+        <input type="text" placeholder="enter college name">
+        <button onclick="cal()"> Submit </button>
+    </div>
+    <div class="ans">
+    </div>
+</body>
+<script>
+    function cal()
+    {
+        var a=document.getElementsByTagName('input')[0].value
+        var b=document.getElementsByTagName('input')[1].value
+        var c=document.getElementsByTagName('input')[2].value
+        var d=document.getElementsByTagName('input')[3].value
+        var e=document.getElementsByTagName('input')[4].value
+     
+
+        document.getElementsByClassName('ans')[0].innerHTML=`<br>Your name : ${a}<br> your age:  ${b}<br>
+        your birthday :  ${b}  <br> your degree :  ${d} <br> your college ${e} `        
+
+    }
+</script>
+</html>
